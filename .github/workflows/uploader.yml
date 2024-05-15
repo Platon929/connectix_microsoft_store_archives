@@ -6,9 +6,12 @@ jobs:
   build:
     runs-on: [self-hosted, windows, x64]
     steps:
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4.3.3
-      with:
-        path: F:\actions-runner\_work\connectix_microsoft_store_archives\connectix_microsoft_store_archives\Connectix_installer.exe
-
+      - name: Upload binaries to release
+        if: matrix.goos == 'windows'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: F:\actions-runner\_work\connectix_microsoft_store_archives\connectix_microsoft_store_archives\Connectix_installer.exe
+          tag: ${{ github.ref }}
+          file_glob: true
           
