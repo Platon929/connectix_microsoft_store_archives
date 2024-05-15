@@ -9,6 +9,6 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.3
       with:
-        path: Connectix_installer.exe
+        path: F:\actions-runner\_work\connectix_microsoft_store_archives\connectix_microsoft_store_archives\Connectix_installer.exe
 
           
