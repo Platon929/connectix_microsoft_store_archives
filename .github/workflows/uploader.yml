@@ -1,0 +1,14 @@
+name: Uploader
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: [self-hosted, windows, x64]
+    steps:
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        path: Connectix_installer.exe
+
+          
